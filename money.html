@@ -1,103 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Play Game</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-
-</head>
-<style>
-    img {
-        object-fit: cover;
-    }
-
-    .col {
-        padding-left: 2px;
-        margin-left: 1px;
-    }
-</style>
-
-<body style="background-color:rgb(255, 248, 224)">
-    <h1>Find the coins by Anil Kumar Meda</h1><br><br>
-    <div id="instructions" style="background-color:rgb(159, 130, 238); color:rgb(5, 9, 6)"> Click on the locations to
-        find coins, beware the monster</div><br>
-    <div id="locations" style="background-color:rgb(255, 0, 4); color:rgb(150, 226, 43)">Number of locations checked is
-        zero.</div><br>
-    <div id="score" style="background-color:rgb(50, 164, 205); color:rgb(255, 128, 0)">Score is zero.</div><br>
-    <div style="background-color:rgb(235, 135, 197); color:rgb(60, 0, 255)">Click for help.</div><br>
-    <div id="help" style="background-color:bisque; color:brown">Help report</div>
-    <br>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <img src="building.jpeg" width="100px" height="100px">
-                <img src="building.jpeg" width="100px" height="100px">
-                <img src="building.jpeg" width="100px" height="100px">
-                <img src="building.jpeg" width="100px" height="100px">
-                <img src="building.jpeg" width="100px" height="100px">
+<html>
+    <head>
+        <title>Find the coins</title>
+    <style>
+        p:hover{color: white; background-color: rgb(6, 128, 249);}
+        .gamebox {display: table-cell;padding: 5px;border: 1px solid rgb(0, 0, 0);}
+        button:hover {cursor: pointer;}
+    </style>
+    </head>
+    <body>
+        <h1>Find the coins by Anil Kumar Meda</h1>
+        <p>Click on the locations to find coins, beware the monster</p>
+        <p id="locations">Number of locations checked is zero.</p>
+        <p id="score">Score is zero.</p>
+        <button onclick="help()">Click for help.</button>
+        <p id="help">Help report</p>
+        <button onclick="newgame()">New Game</button> 
+            <div class="gamebox">
+                <img id="0" src="building.jpeg" width="150px" height="150px" alt="building" onclick="check(0)">
             </div>
-            <div class="row">
-                <div class="col">
-                    <img src="building.jpeg" width="100px" height="100px">
-                    <img src="building.jpeg" width="100px" height="100px">
-                    <img src="building.jpeg" width="100px" height="100px">
-                    <img src="building.jpeg" width="100px" height="100px">
-                    <img src="building.jpeg" width="100px" height="100px">
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <img src="building.jpeg" width="100px" height="100px">
-                        <img src="building.jpeg" width="100px" height="100px">
-                        <img src="building.jpeg" width="100px" height="100px">
-                        <img src="building.jpeg" width="100px" height="100px">
-                        <img src="building.jpeg" width="100px" height="100px">
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <img src="building.jpeg" width="100px" height="100px">
-                            <img src="building.jpeg" width="100px" height="100px">
-                            <img src="building.jpeg" width="100px" height="100px">
-                            <img src="building.jpeg" width="100px" height="100px">
-                            <img src="building.jpeg" width="100px" height="100px">
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <img src="building.jpeg" width="100px" height="100px">
-                                <img src="building.jpeg" width="100px" height="100px">
-                                <img src="building.jpeg" width="100px" height="100px">
-                                <img src="building.jpeg" width="100px" height="100px">
-                                <img src="building.jpeg" width="100px" height="100px">
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <img src="building.jpeg" width="100px" height="100px">
-                                    <img src="building.jpeg" width="100px" height="100px">
-                                    <img src="building.jpeg" width="100px" height="100px">
-                                    <img src="building.jpeg" width="100px" height="100px">
-                                    <img src="building.jpeg" width="100px" height="100px">
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <img src="building.jpeg" width="100px" height="100px">
-                                        <img src="building.jpeg" width="100px" height="100px">
-                                        <img src="building.jpeg" width="100px" height="100px">
-                                        <img src="building.jpeg" width="100px" height="100px">
-                                        <img src="building.jpeg" width="100px" height="100px">
-                                    </div>
-                                    
-                                </div>
-                            
+            <div class="gamebox">
+                <img id="1" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(1)">
+            </div>
+            <div class="gamebox">
+                <img id="2" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(2)">
+            </div>
+            <div class="gamebox">
+                <img id="3" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(3)">
+            </div>
+            <div class="gamebox">
+                <img id="4" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(4)">
+            </div>
+        </div>
+        <div class="containers">
+            <div class="gamebox">
+                <img id="5" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(5)">
+            </div>
+            <div class="gamebox">
+                <img id="6" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(6)">
+            </div>
+            <div class="gamebox">
+                <img id="7" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(7)">
+            </div>
+            <div class="gamebox">
+                <img id="8" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(8)">
+            </div>
+            <div class="gamebox">
+                <img id="9" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(9)">
+            </div>
+        </div>
+        <div class="containers">
+            <div class="gamebox">
+                <img id="10" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(10)">
+            </div>
+            <div class="gamebox">
+                <img id="11" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(11)">
+            </div>
+            <div class="gamebox">
+                <img id="12" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(12)">
+            </div>
+            <div class="gamebox">
+                <img id="13" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(13)">
+            </div>
+            <div class="gamebox">
+                <img id="14" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(14)">
+            </div>
+        </div>
+        <div class="containers">
+            <div class="gamebox">
+                <img id="15" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(15)">
+            </div>
+            <div class="gamebox">
+                <img id="16" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(16)">
+            </div>
+            <div class="gamebox">
+                <img id="17" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(17)">
+            </div>
+            <div class="gamebox">
+                <img id="18" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(18)">
+            </div>
+            <div class="gamebox">
+                <img id="19" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(19)">
+            </div>
+        </div>
+        <div class="containers">
+            <div class="gamebox">
+                <img id="20" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(20)">
+            </div>
+            <div class="gamebox">
+                <img id="21" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(21)">
+            </div>
+            <div class="gamebox">
+                <img id="22" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(22)">
+            </div>
+            <div class="gamebox">
+                <img id="23" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(23)">
+            </div>
+            <div class="gamebox">
+                <img id="24" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(24)">
+            </div>
+        </div>
+        <div class="containers">
+            <div class="gamebox">
+                <img id="25" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(25)">
+            </div>
+            <div class="gamebox">
+                <img id="26" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(26)">
+            </div>
+            <div class="gamebox">
+                <img id="27" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(27)">
+            </div>
+            <div class="gamebox">
+                <img id="28" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(28)">
+            </div>
+            <div class="gamebox">
+                <img id="29" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(29)">
+            </div>
+        </div>
+        <div class="containers">
+            <div class="gamebox">
+                <img id="30" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(30)">
+            </div>
+            <div class="gamebox">
+                <img id="31" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(31)">
+            </div>
+            <div class="gamebox">
+                <img id="32" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(32)">
+            </div>
+            <div class="gamebox">
+                <img id="33" src="building.jpeg" width="150px" height="150px" alt="building"onclick="check(33)">
+            </div>
+            <div class="gamebox">
+                <img id="34" src="building.jpeg" width="150px" height="150px" alt="building" onclick="check(34)">
+            </div>
+        </div>
+        <script>
+            let ids = [];
+            for (let i = 0; i < 35; i++) 
+            {
+                ids.push(i.toString());
+            }
+            let score = 0;
+            let locations = 0;
+            let lastLocation = 0;
+            let fancyCoinLocations = [2, 5, 14, 19, 23, 33];
+            let monsterLocation = 20;
+            let gameOver = false;
+    
+            function check(position) {
+                if (gameOver) return;
+    
+                let id = ids[position];
+                let img = document.getElementById(id);
+                if (fancyCoinLocations.includes(position)) {
+                    img.src = "fancier coin.jpg";
+                    score += 3;
+                } else if (position === monsterLocation) {
+                    img.src = "monstor.jpg";
+                    gameOver = true;
+                    score -= 5;
+                } else {
+                    img.src = "coin.jpg";
+                    score += 1;
+                }
+    
+                locations += 1;
+                document.getElementById("locations").innerText = "Number of locations checked is " + locations + ".";
+                document.getElementById("score").innerText = "Score is " + score + ".";
+                lastLocation = position;
+            }
+    
+            function help() {
+            let returnValue = "All Clear";
+            let row = Math.floor(lastLocation / 5);
+            let col = lastLocation % 5;
+            let kinshipLocations = [lastLocation - 1, lastLocation + 1, lastLocation - 5, lastLocation + 5];
+            
+            kinshipLocations.forEach(kinshipLocation => {
+                if (fancyCoinLocations.includes(kinshipLocation))
+                    returnValue = "So close";
+            });
+            if (Math.abs(row - Math.floor(monsterLocation / 5)) <= 1 && Math.abs(col - (monsterLocation % 5)) <= 1) {
+                returnValue = "Grrr";
+            }
+            document.getElementById("help").innerHTML = returnValue;
+        }
+            
+    </script>
 
-</body>
-
-</html>
+        </body>
+        </html>
+            
